@@ -27,28 +27,30 @@ public class pickupdice : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update()
+	{
 		//define ray. two parameters = ray origin and ray direction
-		Ray camRay = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+		//Ray camRay = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
 		//set max distance
-		float maxRaycastDist = 0.5f;
-		RaycastHit myRayHit = new RaycastHit();
+		//float maxRaycastDist = 1.5f;
+		//RaycastHit myRayHit = new RaycastHit();
 		//visualize
-		Debug.DrawRay(camRay.origin, camRay.direction * maxRaycastDist, Color.magenta);
+		//Debug.DrawRay(camRay.origin, camRay.direction * maxRaycastDist, Color.magenta);
+	}
 
-		if ((Physics.Raycast(camRay, out myRayHit, maxRaycastDist)) && Input.GetMouseButton(0))  //have an else for mouse release
-		{
-			//set gravity to false and kinematic to true so it can be lifted?
-			die.GetComponent<Rigidbody>().useGravity = false;
-			die.GetComponent<Rigidbody>().isKinematic = true;
-			//move and rotate die with player? somehow 'guide' will become player movement.
-			die.transform.position = guide.transform.position;
-			die.transform.rotation = guide.transform.rotation;
-			//making die a child of tempParent
-			die.transform.parent = tempParent.transform;
-		}
-		else
-		{
+
+void OnMouseDown()	{
+		//set gravity to false and kinematic to true so it can be lifted?
+		die.GetComponent<Rigidbody>().useGravity = false;
+		die.GetComponent<Rigidbody>().isKinematic = true;
+		//move and rotate die with player? somehow 'guide' will become player movement.
+		die.transform.position = guide.transform.position;
+		die.transform.rotation = guide.transform.rotation;
+		//making die a child of tempParent
+		die.transform.parent = tempParent.transform;
+	}
+
+	void OnMouseUp(){
 			//mouse release
 			die.GetComponent<Rigidbody>().useGravity = true;
 			die.GetComponent<Rigidbody>().isKinematic = false;
@@ -60,5 +62,7 @@ public class pickupdice : MonoBehaviour
 		}
 
 	}
+
+	//WORKS IN void OnMouseDown() and OnMouseUp() but doesn't work with RaycastHit??? I just??? What??
 	
-}
+

@@ -12,6 +12,7 @@ public class triggerfordice : MonoBehaviour
 	public Text myTextDisplay;
 	public Collider diecollider;
 	int dicefound = 0;
+	public Collider laptoptrigger;
 	
 
 	// Use this for initialization
@@ -19,23 +20,28 @@ public class triggerfordice : MonoBehaviour
 		
 		myTextDisplay.text = "Find all three dice!";
 		Cursor.lockState = CursorLockMode.Locked;
-	
+		laptoptrigger.isTrigger = false;
+
 
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void Update()
 	{
-
+		//trying to make an if statement here where laptoptrigger is enabled if dicefound = 3, but you can't convert an int to a bool
 	}
 
 	void OnTriggerEnter(Collider diecollider)
 	{
-		//add one to dicefound
-		dicefound++;
-		//add new line adding score to text UI!
-		myTextDisplay.text = "Dice found: " + dicefound.ToString();
-		diecollider.GetComponent<Rigidbody>().isKinematic = true;
-		diecollider.enabled = false;
+		//if (gameObject.CompareTag("dice")) doesn't work for ONLY doing this if the die object enters the collider. atm, any collider entering the trigger makes this happen.
+		//{
+			//add one to dicefound
+			dicefound++;
+			//add new line adding score to text UI!
+			myTextDisplay.text = "Dice found: " + dicefound.ToString();
+			diecollider.GetComponent<Rigidbody>().isKinematic = true;
+			diecollider.enabled = false;
+
+		//}
 	}
 }
