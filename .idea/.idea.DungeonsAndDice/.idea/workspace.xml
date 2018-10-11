@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67de8446-be1e-4a00-9ed9-c38ce5ed442b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DungeonsAndDice/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DungeonsAndDice/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/pickupdice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/pickupdice.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/triggerfordice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/triggerfordice.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/scene1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/scene1.unity" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +74,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/triggerfordice.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="227">
@@ -97,7 +92,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/laptop.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="435">
@@ -238,12 +233,12 @@
       <workItem from="1538076048717" duration="3179000" />
       <workItem from="1538495419999" duration="4670000" />
       <workItem from="1538677986683" duration="7037000" />
-      <workItem from="1539269050767" duration="2190000" />
+      <workItem from="1539269050767" duration="2619000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17076000" />
+    <option name="totallyTimeSpent" value="17505000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -355,21 +350,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/laptop.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="43" lean-forward="true" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
-          <folding>
-            <marker date="1539271343610" expanded="true" signature="6:113" ph="..." />
-            <marker date="1539271343610" expanded="true" signature="150:580" ph="{...}" />
-            <marker date="1539271343610" expanded="true" signature="190:376" ph="/* stick on laptop trigger ... */" />
-            <marker date="1539271343610" expanded="true" signature="392:405" ph="{...}" />
-            <marker date="1539271343610" expanded="true" signature="460:467" ph="{...}" />
-            <marker date="1539271343610" expanded="true" signature="513:578" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/triggerfordice.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
@@ -382,6 +362,21 @@
             <marker date="1539270799905" expanded="true" signature="589:723" ph="{...}" />
             <marker date="1539270799905" expanded="true" signature="767:1196" ph="{...}" />
             <marker date="1539270799905" expanded="true" signature="773:971" ph="/* if (gameObject.CompareTag(&quot;dice&quot;)) doesn't work for ONLY doing this if the die object enters the collider. atm ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/laptop.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="43" lean-forward="true" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+          <folding>
+            <marker date="1539271343610" expanded="true" signature="6:113" ph="..." />
+            <marker date="1539271343610" expanded="true" signature="150:580" ph="{...}" />
+            <marker date="1539271343610" expanded="true" signature="190:376" ph="/* stick on laptop trigger ... */" />
+            <marker date="1539271343610" expanded="true" signature="392:405" ph="{...}" />
+            <marker date="1539271343610" expanded="true" signature="460:467" ph="{...}" />
+            <marker date="1539271343610" expanded="true" signature="513:578" ph="{...}" />
           </folding>
         </state>
       </provider>
