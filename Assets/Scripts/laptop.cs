@@ -13,20 +13,33 @@ public class laptop : MonoBehaviour
 	//scenemanager???
 
 	// Use this for initialization
-	void Start () {
-		
-		
-		
+	void Start ()
+	{
+
+		laptopcollider.isTrigger = false;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (triggerfordice.dicefound == 7)
+		{
+			laptopcollider.isTrigger = true;
+		}
+		else
+		{
+			laptopcollider.isTrigger = false;
+		}
 		
 	}
 
-void OnTriggerEnter(Collider laptopcollider)
+void OnTriggerStay(Collider laptopcollider) 
 	{
-		Debug.Log("Win!");
-		SceneManager.LoadScene("endscene");
+		if (Input.GetMouseButtonDown(0) && triggerfordice.dicefound == 7)
+		{
+			Debug.Log("Win!");
+			SceneManager.LoadScene("endscene");
+		}
 	}
 }

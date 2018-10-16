@@ -8,6 +8,8 @@ public class movement : MonoBehaviour
 	public float moveSpeed = 10f;
 	//this variable remembers input and passes it to physics
 	private Vector3 inputVector;
+	private float verticalLook = 0f;
+	public float LookSpeed = 100f;
 	
 
 	// Use this for initialization
@@ -17,18 +19,40 @@ public class movement : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		//mouselook. these r mouse deltas / differences between different frames
-		//0 when nothing is moving. this ISNT MOUSE POSITION
-		float mouseX = Input.GetAxis("Mouse X"); //horizontal mouse movement
-		float mouseY = Input.GetAxis("Mouse Y"); //vertical
+		// MOUSE LOOK!!!
 		
-		//rotate the camera based on mouse input
-		//pitch: up and down rotation (x axis) yaw = left and right rotation (Y axis) roll = rolling (z axis)
-		//first rotate body based on horizontal mouse movement
-		transform.Rotate( 0f, mouseX, 0f);
-		Camera.main.transform.Rotate(-mouseY, 0f, 0f);
+		// getting mouse input
+		// these are mouse "deltas"... delta = difference
+		// these will be 0 when nothing is moving, this ISN'T mouse position
+		float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * LookSpeed; // horizontal mouse movement. multiplied by dT means
+		// the camera will move the same no matter what framerate
+		float mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * LookSpeed; // vertical mouse movement
+		
+		// rotations: Pitch Yaw Roll
+		// pitch = up/down rotation, X axis
+		// yaw = left/right rotation, Y axis
+		// roll = rolling motion, Z axis
+		
+		// rotate the camera based on mouse input
+		// first, rotate body based on horizontal mouse movement
+		transform.Rotate( 0f, mouseX, 0f); // yaw
+		
+		//better mouse lok:
+		//add mouse input to verticalLook, then clamp verticalLook
+		verticalLook += -mouseY;
+		//clamp it
+		verticalLook = Mathf.Clamp(verticalLook, -80f, 80f); //vertical look will always be between -80 and 80
+		//apply verticalLook to rotation
+		Camera.main.transform.localEulerAngles = new Vector3(verticalLook, 0f, 0f);
+		
+		//lock hide cursor if they click the mouse
+		if (Input.GetMouseButtonDown(0)) //0 = left, 1 = right, 2 = middleclick
+		{
+			Cursor.lockState = CursorLockMode.Locked;
+			Cursor.visible = false;
+		}
 
-		
+		//----------------------------- 
 		//WASD MOVEMENT
 		//get axiss returns a float between -1f and 1f. when you're not pressing anything it returns 0f
 		float horizontal = Input.GetAxis("Horizontal"); // a d

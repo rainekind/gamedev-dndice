@@ -36,6 +36,7 @@ public class pickupdice : MonoBehaviour
 		//RaycastHit myRayHit = new RaycastHit();
 		//visualize
 		//Debug.DrawRay(camRay.origin, camRay.direction * maxRaycastDist, Color.magenta);
+		
 	}
 
 
@@ -64,5 +65,6 @@ void OnMouseDown()	{
 	}
 
 	//WORKS IN void OnMouseDown() and OnMouseUp() but doesn't work with RaycastHit??? I just??? What??
+	//either way, code is all good now. script done :)
 	
 
